@@ -35,14 +35,14 @@ void askGoodTechQuestions(ofstream &outfile) {
   while (loopFlag == true) 
   {
     if (response == "yes") {
-      outfile << "### 4. Was it easy to learn and start using? (yes/no): " << response << questionsBuffer;
+      outfile << "### 4. Was it easy to learn and start using? (yes/no)" << questionsBuffer << response << questionsBuffer;
       cout << "5. What specific features made it beginner-friendly? " << questionsBuffer;
       getline(cin, response); cout << endl;
       outfile << "### 5. What specific features made it beginner-friendly?" << questionsBuffer << response << questionsBuffer;
       loopFlag = false;
     } 
     else if (response == "no") {
-      outfile << "### 4. Was it easy to learn and start using? (yes/no): " << response << questionsBuffer;
+      outfile << "### 4. Was it easy to learn and start using? (yes/no)" << questionsBuffer << response << questionsBuffer;
       cout << "5. What made it difficult or unintuitive?" << questionsBuffer;
       getline(cin, response); cout << endl;
       outfile << "### 5. What made it difficult or unintuitive?" << questionsBuffer << response << questionsBuffer;
@@ -83,7 +83,7 @@ void askBadTechQuestions(ofstream &outfile) {
   outfile << "### 9. Did you dislike it immediately, or did frustration grow over time?" << questionsBuffer << response << questionsBuffer;
 
   // Question #10 - Branching Question
-  cout << "10. Was it easy to learn? (yes/no): ";
+  cout << "10. Was it easy to learn? (yes/no)" << questionsBuffer;
   getline(cin, response); cout << endl;
 
   
@@ -92,14 +92,14 @@ void askBadTechQuestions(ofstream &outfile) {
   while (loopFlag == true)
   {
     if (response == "yes") {
-      outfile << "### 10. Was it easy to learn? (yes/no): " << response << questionsBuffer;
+      outfile << "### 10. Was it easy to learn? (yes/no)" << questionsBuffer << response << questionsBuffer;
       cout << "11. What about it made it easy to use?" << questionsBuffer;
       getline(cin, response); cout << endl;
       outfile << "### 11. What about it made it easy to use?\n\n" << response << "\n\n";
       loopFlag = false;
     } 
     else if (response == "no") {
-      outfile << "### 10. Was it easy to learn? (yes/no): " << response << questionsBuffer;
+      outfile << "### 10. Was it easy to learn? (yes/no)" << questionsBuffer << response << questionsBuffer;
       cout << "11. What made it confusing or frustrating?" << questionsBuffer;
       getline(cin, response); cout << endl;
       outfile << "### 11. What made it confusing or frustrating?" << questionsBuffer << response << questionsBuffer;
