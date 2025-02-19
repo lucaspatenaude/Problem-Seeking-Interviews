@@ -7,7 +7,7 @@
 
 This should output a file called `start-survey`
 
-3. Once `script` has appeared, run the following command in the terminal:
+3. Once `start-survey` has appeared, run the following command in the terminal:
 
 `./start-survey`
 
