@@ -9,7 +9,7 @@ using namespace std;
 // -------------------- DEPENDENCIES --------------------
 
 void createResponseFile(ofstream &outfile, const string &name); // Create a response file with interviewee's name
-string mainBuffer = "\n\n";
+string mainBuffer = "\n\n"; // Buffer to separate sections in the response file and terminal prompts
 
 // -------------------- MAIN PROGRAM --------------------
 
@@ -37,6 +37,7 @@ int main() {
   cout << "It will cover topics like your favorite and least favorite technologies, as well as some questions about your learning style" << mainBuffer;
 
   // Survey Questions
+  outfile << "---" << mainBuffer;
   askGoodTechQuestions(outfile);
   outfile << "---" << mainBuffer;
   askBadTechQuestions(outfile);
