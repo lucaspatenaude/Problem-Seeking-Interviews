@@ -64,10 +64,12 @@ void askGoodTechQuestions(ofstream &outfile) {
   getline(cin, response); cout << endl;
   outfile << "### 7. Is there anything you would personally change about the product?" << questionsBuffer << response << questionsBuffer;
 
+  cout << "Thanks for the information! That will conclude the good technology section of the survey. Let's move on to the next set of questions." << questionsBuffer;
+  cout << "----------------------------------------------------------------------------------------------------------" << questionsBuffer;
 }
 
 void askBadTechQuestions(ofstream &outfile) {
-  cout << "Now let's talk about technology you dislike." << questionsBuffer;
+  cout << "Shifting gears now, let's move on to taling about technology you dislike." << questionsBuffer;
   outfile << "## 👎 Technology You Disike Questions" << questionsBuffer;
 
   // Question #8
@@ -108,10 +110,13 @@ void askBadTechQuestions(ofstream &outfile) {
       getline(cin, response); cout << endl;
     }
   }
+
+  cout << "Thank you for the responses! That should do it for the bad tech section. Just a few more questions left." << questionsBuffer;
+  cout << "----------------------------------------------------------------------------------------------------------" << questionsBuffer;
 }
 
 void askLearningStyleQuestions(ofstream &outfile) {
-  cout << "Now let's talk about how you learn new technology" << questionsBuffer;
+  cout << "Lastly, I'd like to know abour your learning style and how you learn new technology" << questionsBuffer;
   outfile << "## 🧠 Learning Style Questions" << questionsBuffer;
 
   // Question #12
