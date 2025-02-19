@@ -4,6 +4,7 @@
 using namespace std;
 
 string response;
+bool loopFlag;
 
 void askGoodTechQuestions(ofstream &outfile) {
   cout << "Let's start with some questions about technology you like.\n"; 
@@ -26,12 +27,21 @@ void askGoodTechQuestions(ofstream &outfile) {
   outfile << "### Was it easy to learn and start using? (yes/no):\n\n" << response << "\n\n";
   
   // Question #4 - Branches of Question #3
-  if (response == "yes") {
-    cout << "What specific features made it beginner-friendly? ";
-  } else {
-    cout << "What made it difficult or unintuitive? ";
+  loopFlag = false;
+  while (loopFlag == true)
+  {
+    if (response == "yes") {
+      cout << "What specific features made it beginner-friendly? ";
+    } 
+    else if (response == "no") {
+      cout << "What made it difficult or unintuitive? ";
+    }
+    else {
+      cout << "Please enter 'yes' or 'no' ";
+      loopFlag = true;
+    }
   }
-  cin.ignore();
+  
   getline(cin, response);
   outfile << (response == "yes" ? "### What specific features made it beginner-friendly?\n\n" : "### What made it difficult or unintuitive?\n\n") << response << "\n\n";
 }
@@ -42,7 +52,6 @@ void askBadTechQuestions(ofstream &outfile) {
 
   // Question #1
   cout << "What is a piece of technology you dislike? ";
-  cin.ignore();
   getline(cin, response);
   outfile << "### What is a piece of technology you dislike?\n\n" << response << "\n\n";
 
@@ -57,12 +66,19 @@ void askBadTechQuestions(ofstream &outfile) {
   outfile << "### Was it easy to learn? (yes/no):\n\n" << response << "\n\n";
   
   // Question #4 - Branches of Question #3
-  if (response == "yes") {
-    cout << "What about it made it easy to use? ";
-  } else {
-    cout << "What made it confusing or frustrating? ";
+  loopFlag = false;
+  while (loopFlag == true)
+  {
+    if (response == "yes") {
+      cout << "What about it made it easy to use? ";
+    } else if (response == "no") {
+      cout << "What made it confusing or frustrating? ";
+    }
+    else {
+      cout << "Please enter 'yes' or 'no' ";
+      loopFlag = true;
+    }
   }
-  cin.ignore();
   getline(cin, response);
   outfile << (response == "yes" ? "### What about it made it easy to use?\n\n" : "### What made it confusing or frustrating?\n\n") << response << "\n\n";
 }
