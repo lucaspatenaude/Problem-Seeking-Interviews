@@ -2,7 +2,7 @@
 
 ## 🏃‍♂️ Running the Script
 
-1. Open the terminal is the program directory (this is the folder containing `survey.cpp`)
+1. Open the terminal is the program directory (this is the folder containing `survey.cpp` it should be called `/Problem-Seeking-Interviews` unless changed)
 2. In the program directory run the following command:
 
 `make`
