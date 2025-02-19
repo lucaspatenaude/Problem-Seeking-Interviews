@@ -7,7 +7,7 @@
 
 This should output a file called `script`
 
-3. Once script has appeared, run the following command in the terminal:
+3. Once `script` has appeared, run the following command in the terminal:
 
 `./script`
 
