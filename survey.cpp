@@ -30,7 +30,7 @@ int main() {
     return 1;
   }
 
-  outfile << "Interviewee: " << name << "\n\n"; // Append the interviewee's name to the response file
+  outfile << "#" << name << "'s Technology Responses\n\n"; // Append the interviewee's name to the response file
 
   cout << "This survey will ask you about your experiences with technology.\n";
   cout << "It will cover topics like your favorite and least favorite "

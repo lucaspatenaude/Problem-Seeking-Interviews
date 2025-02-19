@@ -1,15 +1,15 @@
-all: script
+all: start-survey
 
-script: build/script.o build/questions.o
-	g++ build/script.o build/questions.o -o script
+start-survey: build/survey.o build/questions.o
+	g++ build/survey.o build/questions.o -o start-survey
 
-build/script.o: script.cpp questions/questions.h
+build/survey.o: survey.cpp questions/questions.h
 	mkdir -p build
-	g++ -c script.cpp -o build/script.o
+	g++ -c survey.cpp -o build/survey.o
 
 build/questions.o: questions/questions.cpp questions/questions.h
 	mkdir -p build
 	g++ -c questions/questions.cpp -o build/questions.o
 
 clean:
-	rm -rf build script
+	rm -rf build start-survey
