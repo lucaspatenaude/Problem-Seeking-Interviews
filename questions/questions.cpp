@@ -3,26 +3,26 @@
 
 using namespace std;
 
+string response;
+
 void askGoodTechQuestions(ofstream &outfile) {
   cout << "Let's start with some questions about technology you like.\n"; 
   outfile << "# Technology You Like Questions\n\n";
 
   // Question #1
-  string techName;
   cout << "What is a piece of technology you like using? ";
   cin.ignore();
-  getline(cin, techName);
-  outfile << "## What is a piece of technology you like using?\n\n" << techName << "\n\n";
+  getline(cin, response);
+  outfile << "## What is a piece of technology you like using?\n\n" << response << "\n\n";
 
   // Question #2
   cout << "Did you like using it right away, or did it grow on you over time? ";
-  getline(cin, techName);
-  outfile << "## Did you like using it right away, or did it grow on you over time?\n\n" << techName << "\n\n";
+  getline(cin, response);
+  outfile << "## Did you like using it right away, or did it grow on you over time?\n\n" << response << "\n\n";
 
   // Question #3 - Branching Question
   cout << "Was it easy to learn and start using? (yes/no): ";
-  string response;
-  cin >> response;
+  getline(cin, response);
   outfile << "## Was it easy to learn and start using? (yes/no):\n\n" << response << "\n\n";
   
   // Question #4 - Branches of Question #3
@@ -32,8 +32,8 @@ void askGoodTechQuestions(ofstream &outfile) {
     cout << "What made it difficult or unintuitive? ";
   }
   cin.ignore();
-  getline(cin, techName);
-  outfile << (response == "yes" ? "## What specific features made it beginner-friendly?\n\n" : "## What made it difficult or unintuitive?\n\n") << techName << "\n\n";
+  getline(cin, response);
+  outfile << (response == "yes" ? "## What specific features made it beginner-friendly?\n\n" : "## What made it difficult or unintuitive?\n\n") << response << "\n\n";
 }
 
 void askBadTechQuestions(ofstream &outfile) {
@@ -41,21 +41,19 @@ void askBadTechQuestions(ofstream &outfile) {
   outfile << "# Technology You Disike Questions\n\n";
 
   // Question #1
-  string techName;
   cout << "What is a piece of technology you dislike? ";
   cin.ignore();
-  getline(cin, techName);
-  outfile << "## What is a piece of technology you dislike?\n\n" << techName << "\n\n";
+  getline(cin, response);
+  outfile << "## What is a piece of technology you dislike?\n\n" << response << "\n\n";
 
   // Question #2
   cout << "Did you dislike it immediately, or did frustration grow over time? ";
-  getline(cin, techName);
-  outfile << "## Did you dislike it immediately, or did frustration grow over time?\n\n " << techName << "\n\n";
+  getline(cin, response);
+  outfile << "## Did you dislike it immediately, or did frustration grow over time?\n\n " << response << "\n\n";
 
   // Question #3 - Branching Question
   cout << "Was it easy to learn? (yes/no): ";
-  string response;
-  cin >> response;
+  getline(cin, response);
   outfile << "## Was it easy to learn? (yes/no):\n\n" << response << "\n\n";
   
   // Question #4 - Branches of Question #3
@@ -65,8 +63,8 @@ void askBadTechQuestions(ofstream &outfile) {
     cout << "What made it confusing or frustrating? ";
   }
   cin.ignore();
-  getline(cin, techName);
-  outfile << (response == "yes" ? "## What about it made it easy to use?\n\n" : "## What made it confusing or frustrating?\n\n") << techName << "\n\n";
+  getline(cin, response);
+  outfile << (response == "yes" ? "## What about it made it easy to use?\n\n" : "## What made it confusing or frustrating?\n\n") << response << "\n\n";
 }
 
 void askLearningStyleQuestions(ofstream &outfile) {
@@ -74,9 +72,7 @@ void askLearningStyleQuestions(ofstream &outfile) {
   outfile << "# Learning Style Questions\n\n";
 
   // Question #1
-  string response;
   cout << "How do you feel about learning new technology? ";
-  cin.ignore();
   getline(cin, response);
   outfile << "## How do you feel about learning new technology?\n\n" << response << "\n\n";
 
