@@ -73,29 +73,28 @@ void askBadTechQuestions(ofstream &outfile) {
   outfile << "## 👎 Technology You Disike Questions" << questionsBuffer;
 
   // Question #8
-  cout << "8. What is a piece of technology you dislike?" << questionsBuffer;
+  cout << "8. What is a piece of technology you dislike, and what do you use it for?" << questionsBuffer;
   getline(cin, response); cout << endl;
-  outfile << "### 8. What is a piece of technology you dislike?" << questionsBuffer << response << questionsBuffer;
+  outfile << "### 8. What is a piece of technology you dislike, and what do you use it for?" << questionsBuffer << response << questionsBuffer;
 
   // Question #9
-  cout << "9. Did you dislike it immediately, or did frustration grow over time? " << questionsBuffer;
+  cout << "9. Did you dislike it immediately, or did your frustration build over time? What caused that shift?" << questionsBuffer;
   getline(cin, response); cout << endl;
-  outfile << "### 9. Did you dislike it immediately, or did frustration grow over time?" << questionsBuffer << response << questionsBuffer;
+  outfile << "### 9. Did you dislike it immediately, or did your frustration build over time? What caused that shift?" << questionsBuffer << response << questionsBuffer;
 
   // Question #10 - Branching Question
   cout << "10. Was it easy to learn? (yes/no)" << questionsBuffer;
   getline(cin, response); cout << endl;
 
-  
   // Question #11 - Branches of Question #10
   loopFlag = true;
   while (loopFlag == true)
   {
     if (response == "yes") {
       outfile << "### 10. Was it easy to learn? (yes/no)" << questionsBuffer << response << questionsBuffer;
-      cout << "11. What about it made it easy to use?" << questionsBuffer;
+      cout << "11. If it was easy to use, why did you dislike it?" << questionsBuffer;
       getline(cin, response); cout << endl;
-      outfile << "### 11. What about it made it easy to use?\n\n" << response << "\n\n";
+      outfile << "### 11. If it was easy to use, why did you dislike it?" << questionsBuffer << response << questionsBuffer;
       loopFlag = false;
     } 
     else if (response == "no") {
@@ -111,6 +110,21 @@ void askBadTechQuestions(ofstream &outfile) {
     }
   }
 
+  // Question #12
+  cout << "12. What specific aspects of this technology make it frustrating? (E.g., design, usability, cost, time-consuming tasks)" << questionsBuffer;
+  getline(cin, response); cout << endl;
+  outfile << "### 12. What specific aspects of this technology make it frustrating? (E.g., design, usability, cost, time-consuming tasks)" << questionsBuffer << response << questionsBuffer;
+
+  // Question #13
+  cout << "13. Does this technology fail to meet your functional goals? What do you wish it did better?" << questionsBuffer;
+  getline(cin, response); cout << endl;
+  outfile << "### 13. Does this technology fail to meet your functional goals? What do you wish it did better?" << questionsBuffer << response << questionsBuffer;
+
+  // Question #14
+  cout << "14. If you could redesign or replace this technology, what changes would you make?" << questionsBuffer;
+  getline(cin, response); cout << endl;
+  outfile << "### 14. If you could redesign or replace this technology, what changes would you make?" << questionsBuffer << response << questionsBuffer;
+
   cout << "Thank you for the responses! That should do it for the bad tech section. Just a few more questions left." << questionsBuffer;
   cout << "----------------------------------------------------------------------------------------------------------" << questionsBuffer;
 }
@@ -119,18 +133,33 @@ void askLearningStyleQuestions(ofstream &outfile) {
   cout << "Lastly, I'd like to know abour your learning style and how you learn new technology" << questionsBuffer;
   outfile << "## 🧠 Learning Style Questions" << questionsBuffer;
 
-  // Question #12
-  cout << "12. How do you feel about learning new technology?" << questionsBuffer;
+  // Question #15
+  cout << "15. How do you feel about learning new technology?" << questionsBuffer;
   getline(cin, response); cout << endl;
-  outfile << "### 12. How do you feel about learning new technology?" << questionsBuffer << response << questionsBuffer;
+  outfile << "### 15. How do you feel about learning new technology?" << questionsBuffer << response << questionsBuffer;
 
-  // Question #13
-  cout << "13. What is the best technology you've ever used and why? " << questionsBuffer;
+  // Question #16
+  cout << "16. What motivates you to learn a new tool or technology? (E.g., necessity, curiosity, efficiency)" << questionsBuffer;
   getline(cin, response); cout << endl;
-  outfile << "### 13. What is the best technology you've ever used and why?" << questionsBuffer << response << questionsBuffer;
+  outfile << "### 16. What motivates you to learn a new tool or technology? (E.g., necessity, curiosity, efficiency)" << questionsBuffer << response << questionsBuffer;
 
-  // Question #14
-  cout << "14. What is the worst technology you've ever used and why?" << questionsBuffer;
+  // Question #17
+  cout << "17. What is a piece of technology you picked up quickly? What made it intuitive?" << questionsBuffer;
   getline(cin, response); cout << endl;
-  outfile << "### 14. What is the worst technology you've ever used and why?" << questionsBuffer << response << questionsBuffer;
+  outfile << "### 17. What is a piece of technology you picked up quickly? What made it intuitive?" << questionsBuffer << response << questionsBuffer;
+
+  // Question #18
+  cout << "18. What is a piece of technology you struggled to learn? What made it difficult?" << questionsBuffer;
+  getline(cin, response); cout << endl;
+  outfile << "### 18. What is a piece of technology you struggled to learn? What made it difficult?" << questionsBuffer << response << questionsBuffer;
+
+  // Question #19
+  cout << "19. How do you prefer to learn new technology? (E.g., tutorials, documentation, trial and error)" << questionsBuffer;
+  getline(cin, response); cout << endl;
+  outfile << "### 19. How do you prefer to learn new technology? (E.g., tutorials, documentation, trial and error)" << questionsBuffer << response << questionsBuffer;
+
+  // Question #20
+  cout << "20. What would make learning new technology easier for you? (E.g., better tutorials, customization, fewer steps)" << questionsBuffer;
+  getline(cin, response); cout << endl;
+  outfile << "### 20. What would make learning new technology easier for you? (E.g., better tutorials, customization, fewer steps)" << questionsBuffer << response << questionsBuffer;
 }
