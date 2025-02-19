@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <fstream>
+#include <algorithm>
 #include "questions/questions.h"
 
 using namespace std;
@@ -18,7 +19,7 @@ int main() {
   cout << "Welcome to the Technology Experience Survey!\n";
   
   // Create a response file for the interviewee
-  cout << "Please enter your name: ";
+  cout << "As a single input, please enter your first name and last name: ";
   getline(cin, name);
   ofstream outfile;
   createResponseFile(outfile, name);
@@ -48,6 +49,9 @@ int main() {
 // -------------------- HELPER FUNCTIONS --------------------
 
 void createResponseFile(ofstream &outfile, const string &name) {
-  string filename = "./responses/" + name + "-response.txt";
+  string filename = name;
+  transform(filename.begin(), filename.end(), filename.begin(), ::tolower); // Convert all letters to lowercase 
+  replace(filename.begin(), filename.end(), ' ', '-'); // Replace all spaces with dashes
+  filename = "./responses/" + filename + "-response.md";
   outfile.open(filename);
 }
