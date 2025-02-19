@@ -12,7 +12,6 @@ void askGoodTechQuestions(ofstream &outfile) {
 
   // Question #1
   cout << "What is a piece of technology you like using? ";
-  cin.ignore();
   getline(cin, response);
   outfile << "### What is a piece of technology you like using?\n\n" << response << "\n\n";
 
@@ -27,18 +26,20 @@ void askGoodTechQuestions(ofstream &outfile) {
   outfile << "### Was it easy to learn and start using? (yes/no):\n\n" << response << "\n\n";
   
   // Question #4 - Branches of Question #3
-  loopFlag = false;
-  while (loopFlag == true)
+  loopFlag = true;
+  while (loopFlag == true) 
   {
     if (response == "yes") {
       cout << "What specific features made it beginner-friendly? ";
+      loopFlag = false;
     } 
     else if (response == "no") {
       cout << "What made it difficult or unintuitive? ";
+      loopFlag = false;
     }
     else {
-      cout << "Please enter 'yes' or 'no' ";
-      loopFlag = true;
+      cout << "Please enter 'yes' or 'no': ";
+      getline(cin, response);
     }
   }
   
@@ -66,17 +67,21 @@ void askBadTechQuestions(ofstream &outfile) {
   outfile << "### Was it easy to learn? (yes/no):\n\n" << response << "\n\n";
   
   // Question #4 - Branches of Question #3
-  loopFlag = false;
+  loopFlag = true;
   while (loopFlag == true)
   {
     if (response == "yes") {
       cout << "What about it made it easy to use? ";
-    } else if (response == "no") {
+      loopFlag = false;
+    } 
+    else if (response == "no") {
       cout << "What made it confusing or frustrating? ";
+      loopFlag = false;
     }
     else {
-      cout << "Please enter 'yes' or 'no' ";
-      loopFlag = true;
+      cout << "Please enter 'yes' or 'no': ";
+      getline(cin, response);
+      
     }
   }
   getline(cin, response);
