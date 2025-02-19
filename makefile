@@ -11,5 +11,5 @@ build/questions.o: questions/questions.cpp questions/questions.h
 	mkdir -p build
 	g++ -c questions/questions.cpp -o build/questions.o
 
-clean:
+clear:
 	rm -rf build start-survey

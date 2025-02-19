@@ -7,16 +7,16 @@ string response;
 bool loopFlag;
 
 void askGoodTechQuestions(ofstream &outfile) {
-  cout << "Let's start with some questions about technology you like.\n"; 
+  cout << "Let's start with some questions about technology you like.\n\n"; 
   outfile << "## Technology You Like Questions\n\n";
 
   // Question #1
-  cout << "What is a piece of technology you like using? ";
+  cout << "What is a piece of technology you like using?\n\n";
   getline(cin, response);
   outfile << "### What is a piece of technology you like using?\n\n" << response << "\n\n";
 
   // Question #2
-  cout << "Did you like using it right away, or did it grow on you over time? ";
+  cout << "Did you like using it right away, or did it grow on you over time? \n\n";
   getline(cin, response);
   outfile << "### Did you like using it right away, or did it grow on you over time?\n\n" << response << "\n\n";
 
